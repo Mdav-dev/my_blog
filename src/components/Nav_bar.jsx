@@ -1,47 +1,45 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link1 from './Minor_components/Link1'
 import Link2 from './Minor_components/Link2'
 import Link4 from './Minor_components/Link4';
 import Link3 from './Minor_components/Link3';
 
 function Nav_bar(props) {
-  var check = true;
+  const[mobile, setMobile] = useState(false);	  
+	useEffect(() => {
+		function getScreenSize() {
+		  return window.screen.width;
+		}	 
+		if (getScreenSize()< 500) {
+		  setMobile(true);
+		}   
+	   }, []); 
+
+  var check = props.toggle;
   const custom1 = {
     background: "#052252",
-    width: "70%",
-    height: "100vh",
+    width:mobile?"65%":"85%",
+    height:mobile?"85vh":"100vh",
     position: "fixed",
     top: "0",
     right: check?"0":"-100%",
     display: "flex",
     justifyContent: "space-between",
-    alignItems: "flex-start",
+    alignItems: "stretch",
 		flexDirection: "column",
 		color: "white",
-		alignItems: "center",
 		transition: "1350ms",
 		zIndex: "999",
-    padding: "50px",
+    padding: "40px",
+    overflowY:mobile?"auto":"",
 
-    // position: "fixed",
-		// top: "0",
-		// left: positionLeft,
-		// right: positionRight,
-		// width: "250px",
-		// height: "100vh",
-		// background: "rgba(253, 219, 255)",
-		// display: "flex",
-		// flexDirection: "column",
-		// color: "black",
-		// alignItems: "center",
-		// transition: "750ms",
-		// zIndex: "999",
-    
   }
   const custom2 = {
     display: "flex",
+    flexDirection:mobile?"column":"",
     width: "100%",
-    flexGrow: "3"
+    flexGrow: "3",
+    gap: mobile? "20px":"",
 
 
   }
@@ -52,6 +50,7 @@ function Nav_bar(props) {
     justifyContent: "space-between",
     alignItems: "flex-start",
     flex: "1",
+    gap: mobile?"13px":"",
 
   }
   const custom4 = {
@@ -60,7 +59,7 @@ function Nav_bar(props) {
     justifyContent: "flex-start",
     alignItems: "flex-start",
     flex: "1",
-    gap: '20px',
+    gap:mobile?"10px":'20px',
    
   }
   const logo_container ={
@@ -70,14 +69,15 @@ function Nav_bar(props) {
 
   }
   const logo = {
-    width: "70px",
-    height: "70px",
+    width:mobile?"50px":"70px",
+    height:mobile?"50px":"70px",
     
   }
   const custom5 = {
     display: "flex",
+    flexDirection:mobile?"column":"",
     flexGrow: "2",
-    gap: "50px",
+    gap:mobile?"30px":"50px",
     
   }
   const custom6 = {
@@ -146,21 +146,20 @@ function Nav_bar(props) {
             link_color = {color}
 
             />
-            <img src='Images/sdaw.svg' style={logo}/>
+            {mobile?"":<img src='Images/sdaw.svg' style={logo}/>}
           </div>	 
           <div style={custom4}>
             <Link1 title="GIVING" link_color = {color}/>
             <Link1 title="PRAYER REQUEST" link_color = {color}/>
             <Link1 title="ANNOUNCEMENTS" link_color = {color}/>
+            {mobile?<img src='Images/sdaw.svg' style={logo}/>:""}
           </div>
-      </div>       
-      {/* <div style={logo_container}>
-            <img src='Images/sdaw.svg' style={logo}/>
-      </div>           */}
+      </div> 
+      
       <div style={custom5}>
           <div style={custom6}>
             <p style={para}>maasaimarauniversitysda.or.ke is the official 
-            website of the Seventh-day Adventist
+            website of the Seventh-Day Adventist
             church Maasai Mara University.</p>
             <p style={para}>Seventh-day Adventists are devoted to helping 
             people understand the Bible to find

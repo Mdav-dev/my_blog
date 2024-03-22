@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaCaretRight } from "react-icons/fa";
+import { VscTriangleDown } from "react-icons/vsc";
 
 function Link3(props) {
+	const[mobile, setMobile] = useState(false);	
+  
+	useEffect(() => {
+		function getScreenSize() {
+		  return window.screen.width;
+		}	 
+		if (getScreenSize()< 500) {
+		  setMobile(true);
+		}   
+	   }, []); 
+
 	const custom1 = {
 		cursor: "pointer",
 		display: "flex",
 		justifyContent: "space-between",
-		alignItems: "flex-end"
+		alignItems: "flex-end",
+		gap: "20px",
 	 
 	   }
 	   const custom2 = {
@@ -22,7 +35,7 @@ function Link3(props) {
 	   return (
 		<div style={custom1} id={props.id}>
 		  <a style={custom2} href={props.title}>{props.title}</a> 
-		  <FaCaretRight style={custom3}/>
+		  {mobile?<VscTriangleDown style={custom3}/> :<FaCaretRight style={custom3}/>}
 		</div>
 	   )
 	 }

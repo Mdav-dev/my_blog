@@ -22,6 +22,7 @@ function Link2(props) {
 		fontSize: "19px",
 		fontFamily:"\"noto serif\", Georgia, Times, \"times new roman\",serif",
 		textDecoration: "none",
+		color: props.link_color
 	}
   return (
 	<div style={custom1} id={props.id}>

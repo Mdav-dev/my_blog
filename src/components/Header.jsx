@@ -7,7 +7,7 @@ import { IoCloseSharp } from "react-icons/io5";
 
 function Header() {
   const[mobile, setMobile] = useState(false);	
-    
+  
 	useEffect(() => {
 		function getScreenSize() {
 		  return window.screen.width;
@@ -17,14 +17,11 @@ function Header() {
 		}   
 	   }, []); 
 
-     var display = false; 
-     function handleClick(){
-      display = true;
-    }
-    function handleReturn(){
-      display = false;
-    }
-
+     const[screenDisplay, setScreenDisplay] = useState(false);
+    
+     function hover(){
+       setScreenDisplay(!screenDisplay);
+     }
      
      
   const custom1 = {
@@ -32,9 +29,10 @@ function Header() {
     flexDirection: mobile?"column":"",
     justifyContent: "space-between",
     alignItems: "center",
-    width: "84%",
+    width: "85%",
     borderBottom: "4px solid #052252",
-    height: "100px"
+    height:mobile?"100px":"130px",
+    marginBottom: "8px",
 
   }
   const custom2 = {
@@ -85,19 +83,22 @@ function Header() {
   }
   const menu_init = {
     height: "100vh",
-    width: "100%",
-    background: "#05225230",
+    width:"96%",
+    background: "#05225299",
     display: "flex",
     justifyContent: "flex-start",
     alignItems: "flex-start",
-    padding: "5%",    
+    padding: "2%",    
     position: "fixed",
-    left:display?"0":"100%",
+    top: "0",
+    right:screenDisplay?"0":"-100%",
     transition: "750ms",
 		zIndex: "995",
     a:{
       color: "white",
-      width: "25px"
+      width: "30px",
+      height: "30px",
+
     }
   }
 
@@ -112,16 +113,19 @@ var color = "grey";
         <p style={custom4}>Maasai Mara University<br/> Seventh-day Adventist Church</p>
       </div>
 
-     {mobile?<div><div onClick={handleClick()} style={b}>
+     {mobile?<div><div onClick={hover} style={b}>
           <FaBars style={custom6.a}/>
           <Link1 title="MENU" />
-          </div></div>:
+          </div>
+          <div style={menu_init}><IoCloseSharp onClick={hover} style={menu_init.a}/></div>
+            <Nav_bar toggle = {screenDisplay} />
+            </div>:
         <div style={custom5}>
             <div style={custom6}>
               <Link1 title="GIVING" link_color = {color}/>
               <Link1 title="PRAYER REQUEST" link_color = {color}/>
               <Link1 title="ANNOUNCEMENTS" link_color = {color}/>
-              <div onClick={handleClick()} style={b}>
+              <div onClick={hover} style={b}>
                 <FaBars style={custom6.a}/>
                 <Link1 title="MENU" link_color = {color}/>
               </div>
@@ -136,8 +140,8 @@ var color = "grey";
               <Link2 title="Announcements" test={false} link_color = "#052252"/>
               <Link2 title="Contact Us" test={false} link_color = "#052252"/>
             </div>
-            <div style={menu_init}><IoCloseSharp onClick={handleReturn()} style={menu_init.a}/></div>
-            <Nav_bar toggle = {display} />
+            <div style={menu_init}><IoCloseSharp onClick={hover} style={menu_init.a}/></div>
+            <Nav_bar toggle = {screenDisplay} />
           </div>} 
     </div>
   )
