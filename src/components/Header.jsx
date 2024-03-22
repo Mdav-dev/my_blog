@@ -5,11 +5,9 @@ import Link2 from './Minor_components/Link2';
 import { FaBars } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
 
-
-
 function Header() {
   const[mobile, setMobile] = useState(false);	
-  
+    
 	useEffect(() => {
 		function getScreenSize() {
 		  return window.screen.width;
@@ -19,13 +17,15 @@ function Header() {
 		}   
 	   }, []); 
 
-     var display = false;
+     var display = false; 
      function handleClick(){
-        display = true;
-     }
-     function handleReturn(){
-        display = false;
-     }
+      display = true;
+    }
+    function handleReturn(){
+      display = false;
+    }
+
+     
      
   const custom1 = {
     display: "flex",
@@ -81,6 +81,7 @@ function Header() {
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
+    cursor: "pointer",
   }
   const menu_init = {
     height: "100vh",
@@ -100,7 +101,7 @@ function Header() {
     }
   }
 
-
+var color = "grey";
 
   
   return (
@@ -117,26 +118,26 @@ function Header() {
           </div></div>:
         <div style={custom5}>
             <div style={custom6}>
-              <Link1 title="GIVING" />
-              <Link1 title="PRAYER REQUEST" />
-              <Link1 title="ANNOUNCEMENTS" />
+              <Link1 title="GIVING" link_color = {color}/>
+              <Link1 title="PRAYER REQUEST" link_color = {color}/>
+              <Link1 title="ANNOUNCEMENTS" link_color = {color}/>
               <div onClick={handleClick()} style={b}>
                 <FaBars style={custom6.a}/>
-                <Link1 title="MENU" />
+                <Link1 title="MENU" link_color = {color}/>
               </div>
             </div>
 
             <div style={custom7}>
-              <Link2 title="Home" test={false}/>
-              <Link2 title="About Us" test={true}/>
-              <Link2 title="Beliefs" test={true}/>
-              <Link2 title="Resources" test={true}/>
-              <Link2 title="Downloads" test={true}/>
-              <Link2 title="Announcements" test={false}/>
-              <Link2 title="Contact Us" test={false}/>
+              <Link2 title="Home" test={false} link_color = "#052252"/>
+              <Link2 title="About Us" test={true} link_color = "#052252"/>
+              <Link2 title="Beliefs" test={true} link_color = "#052252"/>
+              <Link2 title="Resources" test={true} link_color = "#052252"/>
+              <Link2 title="Downloads" test={true} link_color = "#052252"/>
+              <Link2 title="Announcements" test={false} link_color = "#052252"/>
+              <Link2 title="Contact Us" test={false} link_color = "#052252"/>
             </div>
             <div style={menu_init}><IoCloseSharp onClick={handleReturn()} style={menu_init.a}/></div>
-            <Nav_bar test = {display} />
+            <Nav_bar toggle = {display} />
           </div>} 
     </div>
   )

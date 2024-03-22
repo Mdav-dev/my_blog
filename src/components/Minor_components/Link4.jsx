@@ -1,11 +1,17 @@
 import React from 'react'
-import { FaAngleDown } from "react-icons/fa6";
 import { VscTriangleDown } from "react-icons/vsc";
 
-
-
-function Link2(props) {
+function Link4(props) {
 	var check = props.test;
+	var hover = false;
+	
+
+	function handleHover(){
+		hover = true;
+	}
+	function handleMouseOut(){
+		hover = false;
+	}
 
 	const custom1 = {
 		display: "flex",
@@ -19,16 +25,17 @@ function Link2(props) {
 		},
 	}
 	const custom2 = {
-		fontSize: "19px",
+		fontSize: "15px",
 		fontFamily:"\"noto serif\", Georgia, Times, \"times new roman\",serif",
+		color: hover?"grey":"white",
 		textDecoration: "none",
 	}
   return (
-	<div style={custom1} id={props.id}>
-		<a style={custom2} href={props.title}>{props.title}</a>
+	<div className='link4' onMouseOver={handleHover()} onMouseOut={handleMouseOut()} style={custom1} id={props.id}>
+		<a style={custom2} href={props.s}>{props.title}</a>
 		<VscTriangleDown style={custom1.a} />
    	</div>
   )
 }
 
-export default Link2;
+export default Link4
