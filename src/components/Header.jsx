@@ -31,7 +31,7 @@ function Header() {
     alignItems: "center",
     width: "85%",
     borderBottom: "4px solid #052252",
-    height:mobile?"100px":"130px",
+    height:"100px",
     marginBottom: "8px",
 
   }

@@ -64,10 +64,14 @@ function Footer() {
     color: "#fff",
   }
   const p4 = {
-    fontFamily:"\"noto sans\", sans-serif",
-    fontSize: "13px",
-    textDecoration: "none",
-    color: "#fff",
+        display: "flex",
+        alignItems: "flex-end",
+    a:{
+      fontFamily:"\"noto sans\", helvetica, arial, sans-serif",
+      fontSize: "13px",
+      textDecoration: "none",
+      color: "#fff",
+    }
   }
   const icon = {
     height: "14px",
@@ -87,14 +91,14 @@ function Footer() {
           Maasai Mara University, Lecture Theatre 201.(LT 201)</p>}
       </div>
       <div>
-        <p style={{}}><a style={p3} href='https://www.facebook.com'>FACEBOOK</a></p>
-        <p style={p3}><a style={p3} href='https://www.x.com'>X</a></p>
-        <p style={p3}><a style={p3} href='https://www.instagram.com'>INSTAGRAM</a></p>        
+        <p><a style={p3} href='https://www.facebook.com'>FACEBOOK</a></p>
+        <p><a style={p3} href='https://www.x.com'>X</a></p>
+        <p><a style={p3} href='https://www.instagram.com'>INSTAGRAM</a></p>        
       </div>
       <div>
-      <p style={p4}><HiOutlineBars3CenterLeft style={icon}/> <a style={p4} href='https://www.adventist.org/trademark-and-logo-usage/'>TRADEMARK AND LOGO USAGE</a></p>
-      <p style={p4}><HiOutlineBars3CenterLeft style={icon}/> <a style={p4} href='https://www.adventist.org/legal-notice/'>LEGAL NOTICE</a></p>
-      <p style={p4}><HiOutlineBars3CenterLeft style={icon}/> <a style={p4} href='https://privacy.adventist.org/'>PRIVACY POLICY</a></p>      
+      <p style={p4}><HiOutlineBars3CenterLeft style={icon}/> <a style={p4.a} href='https://www.adventist.org/trademark-and-logo-usage/'>TRADEMARK AND LOGO USAGE</a></p>
+      <p style={p4}><HiOutlineBars3CenterLeft style={icon}/> <a style={p4.a} href='https://www.adventist.org/legal-notice/'>LEGAL NOTICE</a></p>
+      <p style={p4}><HiOutlineBars3CenterLeft style={icon}/> <a style={p4.a} href='https://privacy.adventist.org/'>PRIVACY POLICY</a></p>      
       </div>
       {mobile?<p style={p2}><MdOutlineCopyright style={cright}/> {year} Seventh-Day Adventist Church Maasai Mara University.<br/>
           Maasai Mara University, Lecture Theatre 201.(LT 201)</p>:""}
