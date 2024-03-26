@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import Activity_card from './Minor_components/Activity_card';
 
 function Central() {
 
@@ -44,16 +45,19 @@ function Central() {
 	const note = {
 		display: "flex",
 		fontFamily: "noto serif",
-		fontSize: mobile?"22px":"40px",
+		fontSize: mobile?"29px":"50px",
 		color: "#052252",
 		margin: "20px",
-		fontweight: "bold",
+		// fontweight: "bold",
 		borderBottom: "4px solid #052252",
 		padding:"28px",
 		textAlign: "center",
 		justifyContent: "center",
 		alignItems: "center",
 		// height: "200px",
+		"fontFamily":"\"Tangerine\", cursive",
+		"fontWeight":"1000",
+		"fontStyle":"normal"
 	}
 	const custom4 = {
 		display: "flex",
@@ -63,13 +67,14 @@ function Central() {
 		padding: mobile?"10px":"30px",
 		
 		
+		
 	}
 	const custom5 = {
 		
 	}
 	const custom6 = {
-		"width":mobile?"270px":"360px",
-		"height":mobile?"375px":"500px",
+		"width":mobile?"100%":"250%",
+		"height":mobile?"50vh":"100vh",
 		"backgroundImage":"url('./Images/zebra.jpg')",
 		"backgroundSize":"cover",
 		"backgroundPosition":"center",
@@ -79,6 +84,7 @@ function Central() {
 		alignItems: "center",
 		textAlign: "center",
 		color: "#fff",
+		marginBottom: "15px"
 		
 
 	}
@@ -94,7 +100,7 @@ function Central() {
 			</div>
 			<h2 style={note}>
 					But from there you will seek the Lord your God, and you will
-				 	find Him if you seek Him with all your heart and with all your soul.
+				 	find Him if you seek Him with all your heart and with all your soul.<br/>
 					Join us every Sabbath and let’s delve together into the Word of
 					God, and in praise and worship.
 			</h2>
@@ -104,6 +110,32 @@ function Central() {
 				<div style={custom6}>
 					What a flellowshop,<br/> what a joy divine,<br/> leaning on the everlasting arms
 				</div>				
+			</div>
+			<div style={custom7}>
+				<Activity_card
+					startD="" 
+					endD="12 - 17"
+					description="Week"
+					sabbath="Week of Spiritual Emphasis"
+					 />
+				<Activity_card
+					startD="" 
+					endD="3 - 24"
+					description="Half-week"
+					sabbath="Health week"
+					 />
+				<Activity_card
+					startD="" 
+					endD="17 - 31"
+					description="Sabbath"
+					sabbath="Music Sabbath"
+					 />
+				<Activity_card
+					startD="" 
+					endD="Oct 26 - Nov 1"
+					description="Weekend"
+					sabbath="AMO Weekend and Sabbath"
+					 />
 			</div>
 
 		</div>
