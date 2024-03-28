@@ -133,7 +133,14 @@ var color = "grey";
 
             <div style={custom7}>
               <Link2 title="Home" test={false} link_color = "#052252"/>
-              <Link2 title="About Us" test={true} link_color = "#052252"/>
+              <Link2 
+              title="About Us" 
+              test={true} 
+              link_color = "#052252"
+              sub1 = "Mission and vision"
+              sub2 = "Another"
+              // sub3 = "Method"
+              />
               <Link2 title="Beliefs" test={true} link_color = "#052252"/>
               <Link2 title="Resources" test={true} link_color = "#052252"/>
               <Link2 title="Downloads" test={true} link_color = "#052252"/>
