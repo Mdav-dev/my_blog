@@ -4,6 +4,7 @@ import Link1 from './Minor_components/Link1';
 import Link2 from './Minor_components/Link2';
 import { FaBars } from "react-icons/fa6";
 import { IoCloseSharp } from "react-icons/io5";
+import sub from './Minor_components/sub';
 
 function Header() {
   const[mobile, setMobile] = useState(false);	
@@ -104,6 +105,7 @@ function Header() {
 
 var color = "grey";
 
+
   
   return (
     <div style={custom1}>
@@ -132,20 +134,33 @@ var color = "grey";
             </div>
 
             <div style={custom7}>
-              <Link2 title="Home" test={false} link_color = "#052252"/>
+              <Link2 
+                  title="Home" 
+                  test={false} 
+                  href='/#'
+                  link_color = "#052252"/>
               <Link2 
               title="About Us" 
               test={true} 
               link_color = "#052252"
               sub1 = "Mission and vision"
+              href1='/about'
               sub2 = "Another"
               // sub3 = "Method"
               />
               <Link2 title="Beliefs" test={true} link_color = "#052252"/>
               <Link2 title="Resources" test={true} link_color = "#052252"/>
               <Link2 title="Downloads" test={true} link_color = "#052252"/>
-              <Link2 title="Announcements" test={false} link_color = "#052252"/>
-              <Link2 title="Contact Us" test={false} link_color = "#052252"/>
+              <Link2 
+                  title="Announcements" 
+                  test={false} 
+                  href='/announcements'
+                  link_color = "#052252"/>
+              <Link2 
+                  title="Contact Us" 
+                  href='/contact'
+                  test={false} 
+                  link_color = "#052252"/>
             </div>
             <div style={menu_init}><IoCloseSharp onClick={hover} style={menu_init.a}/></div>
             <Nav_bar toggle = {screenDisplay} />

@@ -19,9 +19,10 @@ function Activity_card(props) {
 		display: "grid",
 		gridTemplateColumns: "1fr 3fr",
 		gridTemplateRows: "1fr 2fr",
-		borderRadius: "10%",
+		// borderRadius: "10%",
 		marginTop: "15px",
 		width: mobile? "":"500px",
+		borderRadius: "10px",
 		
 		
 
@@ -36,9 +37,9 @@ function Activity_card(props) {
 		alignItems: "center",
 	}
 	const custom2 = {
-		gridColumn: "1/2",
-		gridRow: "1/2",
-		...common,
+		// gridColumn: "1/2",
+		// gridRow: "1/2",
+		// ...common,
 
 	}
 	const custom3 = {
@@ -54,7 +55,7 @@ function Activity_card(props) {
 	}
 	const custom4 = {
 		gridColumn: "1/2",
-		gridRow: "2/3",
+		gridRow: "1/3",
 		fontFamily: "\"IBM Plex Sans\", sans-serif",
 		fontWeight: "500",
 		fontStyle: "normal",

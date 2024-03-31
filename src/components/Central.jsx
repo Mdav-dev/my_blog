@@ -137,7 +137,6 @@ function Central() {
 					sabbath="AMO Weekend and Sabbath"
 					 />
 			</div>
-
 		</div>
 		<div>
 
